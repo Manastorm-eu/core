@@ -692,6 +692,7 @@ struct ItemTemplate
     uint32 MinMoneyLoot;
     uint32 MaxMoneyLoot;
     ItemFlagsCustom FlagsCu;
+    uint32 ExtendedFlags = 0;                               // Manastorm: sent last in the item query answer (0 for the stock items)
 
     // helpers
     [[nodiscard]] bool HasSignature() const

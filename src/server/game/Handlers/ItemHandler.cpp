@@ -535,6 +535,7 @@ void WorldSession::HandleItemQuerySingleOpcode(WorldPacket& recvData)
         queryData << pProto->Duration;                           // added in 2.4.2.8209, duration (seconds)
         queryData << pProto->ItemLimitCategory;                  // WotLK, ItemLimitCategory
         queryData << pProto->HolidayId;                          // Holiday.dbc?
+        queryData << pProto->ExtendedFlags;                      // Manastorm: past the stock answer, a stock client leaves it unread
         SendPacket(&queryData);
     }
     else
