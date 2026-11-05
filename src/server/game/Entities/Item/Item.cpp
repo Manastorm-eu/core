@@ -1101,6 +1101,9 @@ Item* Item::CreateItem(uint32 item, uint32 count, Player const* player, bool clo
     if (count < 1)
         return nullptr;                                        //don't create item at zero count
 
+    if (!clone)
+        sScriptMgr->OnBeforeItemCreate(item, player);
+
     ItemTemplate const* pProto = sObjectMgr->GetItemTemplate(item);
     if (!pProto)
         ABORT();
