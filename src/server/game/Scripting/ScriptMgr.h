@@ -179,6 +179,7 @@ public: /* WorldScript */
     void OnShutdown();
     void OnBeforeWorldInitialized();
     void OnAfterUnloadAllMaps();
+    void OnAfterLoadItemTemplates();
 
 public: /* FormulaScript */
     void OnHonorCalculation(float& honor, uint8 level, float multiplier);
@@ -211,6 +212,7 @@ public: /* ItemScript */
     bool OnCastItemCombatSpell(Player* player, Unit* victim, SpellInfo const* spellInfo, Item* item);
     void OnGossipSelect(Player* player, Item* item, uint32 sender, uint32 action);
     void OnGossipSelectCode(Player* player, Item* item, uint32 sender, uint32 action, char const* code);
+    void OnBeforeItemCreate(uint32& itemEntry, Player const* player);
 
 public: /* CreatureScript */
     bool OnGossipHello(Player* player, Creature* creature);

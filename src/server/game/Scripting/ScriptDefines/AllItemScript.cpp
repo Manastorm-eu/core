@@ -142,6 +142,14 @@ void ScriptMgr::OnGossipSelectCode(Player* player, Item* item, uint32 sender, ui
     }
 }
 
+void ScriptMgr::OnBeforeItemCreate(uint32& itemEntry, Player const* player)
+{
+    ExecuteScript<AllItemScript>([&](AllItemScript* script)
+    {
+        script->OnBeforeItemCreate(itemEntry, player);
+    });
+}
+
 AllItemScript::AllItemScript(char const* name) :
     ScriptObject(name)
 {

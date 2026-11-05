@@ -37,6 +37,7 @@ enum WorldHook
     WORLDHOOK_ON_AFTER_UNLOAD_ALL_MAPS,
     WORLDHOOK_ON_BEFORE_FINALIZE_PLAYER_WORLD_SESSION,
     WORLDHOOK_ON_BEFORE_WORLD_INITIALIZED,
+    WORLDHOOK_ON_AFTER_LOAD_ITEM_TEMPLATES,
     WORLDHOOK_END
 };
 
@@ -92,6 +93,11 @@ public:
      * @brief This hook runs after all scripts loading and before itialized
      */
     virtual void OnBeforeWorldInitialized() { }
+
+    /**
+     * @brief Called once the item templates are loaded, before anything loads items (auctions, mails, characters).
+     */
+    virtual void OnAfterLoadItemTemplates() { }
 };
 
 #endif

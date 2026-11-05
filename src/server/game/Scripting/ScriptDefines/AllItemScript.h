@@ -43,6 +43,14 @@ public:
 
     // Called when a player selects an option in an item gossip window
     virtual void OnItemGossipSelectCode(Player* /*player*/, Item* /*item*/, uint32 /*sender*/, uint32 /*action*/, char const* /*code*/) { }
+
+    /**
+     * @brief Called before a new item is created (not a clone), with the entry it will be created from.
+     *
+     * @param itemEntry The entry of the item to create: a script may change it, the item is then created from the new entry.
+     * @param player The player the item is created for, or nullptr.
+     */
+    virtual void OnBeforeItemCreate(uint32& /*itemEntry*/, Player const* /*player*/) { }
 };
 
 #endif

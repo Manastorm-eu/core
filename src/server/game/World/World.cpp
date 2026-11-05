@@ -524,6 +524,7 @@ void World::SetInitialWorldSettings()
 
     LOG_INFO("server.loading", "Loading Items...");                         // must be after LoadRandomEnchantmentsTable and LoadPageTexts
     sObjectMgr->LoadItemTemplates();
+    sScriptMgr->OnAfterLoadItemTemplates();
 
     LOG_INFO("server.loading", "Loading Item Set Names...");                // must be after LoadItemPrototypes
     sObjectMgr->LoadItemSetNames();

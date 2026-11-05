@@ -84,6 +84,11 @@ void ScriptMgr::OnBeforeWorldInitialized()
     CALL_ENABLED_HOOKS(WorldScript, WORLDHOOK_ON_BEFORE_WORLD_INITIALIZED, script->OnBeforeWorldInitialized());
 }
 
+void ScriptMgr::OnAfterLoadItemTemplates()
+{
+    CALL_ENABLED_HOOKS(WorldScript, WORLDHOOK_ON_AFTER_LOAD_ITEM_TEMPLATES, script->OnAfterLoadItemTemplates());
+}
+
 WorldScript::WorldScript(char const* name, std::vector<uint16> enabledHooks)
     : ScriptObject(name, WORLDHOOK_END)
 {
